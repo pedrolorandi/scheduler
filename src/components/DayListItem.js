@@ -10,7 +10,7 @@ export default function DayListItem(props) {
 
   let className = classNames(
     'day-list__item', {
-    'day-list__item--selected': props.name === props.day,
+    'day-list__item--selected': props.selected,
     'day-list__item--full': props.spots === 0
   })
 
