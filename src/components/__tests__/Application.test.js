@@ -124,8 +124,8 @@ describe("Applicaton", () => {
       queryByText(day, "Monday")
     );
     
-    /* Editing is changing the remaining spots */
-    // expect(getByText(monday, "1 spot remaining")).toBeInTheDocument();
+    // 9. Check that the DayListItem with the text "Monday" also has the text "1 spot remaining" 
+    expect(getByText(monday, "1 spot remaining")).toBeInTheDocument();
   })
 
   it("shows the save error when failing to save an appointment", async () => {
