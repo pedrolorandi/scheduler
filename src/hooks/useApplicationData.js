@@ -76,12 +76,10 @@ export default function useApplicationData() {
   const calculateSpots = (day, appointments) => {
     const selectedDay = state.days.find(d => d.name === day);
 
-    const spots = selectedDay.appointments.reduce((acc, key) => {
-      if(!appointments[key].interview) acc[key] = appointments[key];
-      return acc;
-    }, {})
+    const spots = selectedDay.appointments.filter(key => !appointments[key].interview)
 
-    return Object.keys(spots).length;
+    console.log(spots.length);
+    return spots.length;
   }
 
   return { state, setDay, bookInterview, cancelInterview }
